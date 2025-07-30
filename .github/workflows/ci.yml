@@ -19,6 +19,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: rustup update ${{ matrix.toolchain }} && rustup default ${{ matrix.toolchain }}
       - run: cargo build --verbose
+      - run: cargo run
       - run: cargo clippy
       - run: |
           export RUST_BACKTRACE=1
